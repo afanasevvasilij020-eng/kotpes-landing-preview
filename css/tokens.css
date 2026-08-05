@@ -1,0 +1,82 @@
+/* ============================================================
+   Дизайн-токены «Кот и Пёс»
+   Источник значений: newlanding/BRANDBOOK.md (брендбук, стр. 6 и 8).
+   Фирменные цвета не изменяются. Оттенки *-deep / *-soft — производные
+   для фонов и текста, введены ради контраста; логотип и фирменные
+   цвета остаются как в брендбуке.
+   ============================================================ */
+
+:root {
+  /* --- Фирменные цвета брендбука --- */
+  --brand-orange: #f05a1e;        /* C3 M74 Y96 K0  · RGB 240 90 30  */
+  --brand-green: #14b941;         /* C80 M0 Y95 K0  · RGB 20 185 65  */
+  --grad-start: #e14628;          /* C3 M84 Y97 K0  · RGB 225 70 40  */
+  --grad-end: #f5a01e;            /* C2 M43 Y92 K0  · RGB 245 160 30 */
+
+  /* Допустимые цветные фоны брендбука */
+  --bg-green: #5abe1e;
+  --bg-mint: #4bd2b4;
+  --bg-lime: #d2c823;
+  --bg-blue: #0aaadc;
+
+  /* --- Производные оттенки (для контраста текста) --- */
+  --green-deep: #0b7a2c;
+  --green-mid: #12a93b;
+  --green-soft: #e9f8ee;
+  --orange-deep: #d4470f;
+  --orange-soft: #fff0e7;
+
+  /* --- Нейтральные --- */
+  --ink: #22262b;
+  --ink-soft: #5c6672;
+  --ink-faint: #8b95a1;
+  --line: #e9e4de;
+  --paper: #ffffff;
+  --paper-warm: #fff8f3;
+
+  /* --- Состояния --- */
+  --danger: #d92d20;
+  --danger-soft: #fdeceb;
+
+  /* --- Градиенты --- */
+  --grad-brand: linear-gradient(135deg, var(--grad-start) 0%, var(--grad-end) 100%);
+  --grad-btn: linear-gradient(135deg, #e14628 0%, #f05a1e 100%);
+  --grad-hero: linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 60%, #16c246 100%);
+
+  /* --- Типографика --- */
+  --font: "Nunito", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  --fs-display: clamp(2.1rem, 1.2rem + 3.6vw, 4rem);
+  --fs-h2: clamp(1.6rem, 1.1rem + 2vw, 2.6rem);
+  --fs-h3: clamp(1.15rem, 1rem + 0.7vw, 1.5rem);
+  --fs-lead: clamp(1.02rem, 0.96rem + 0.4vw, 1.2rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* --- Радиусы (округлость — характер бренда) --- */
+  --r-sm: 12px;
+  --r-md: 20px;
+  --r-lg: 32px;
+  --r-xl: 44px;
+  --r-pill: 999px;
+
+  /* --- Тени: тёплые, без серого --- */
+  --sh-card: 0 24px 60px -28px rgba(180, 78, 20, 0.38);
+  --sh-soft: 0 10px 26px -14px rgba(34, 38, 43, 0.28);
+  --sh-btn: 0 12px 24px -10px rgba(225, 70, 40, 0.6);
+  --sh-lift: 0 20px 34px -12px rgba(225, 70, 40, 0.5);
+
+  /* --- Сетка --- */
+  --wrap: 1180px;
+  --gutter: clamp(1rem, 0.6rem + 2vw, 2.5rem);
+
+  /* --- Движение --- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur: 0.34s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur: 0.001s;
+  }
+}

@@ -1,0 +1,41 @@
+# Лендинг-квиз «Работа в Кот и Пёс»
+# Файл рассчитан на Apache (хостинг Beget). Ничего лишнего: доступ к данным,
+# сжатие и кеш статики.
+
+DirectoryIndex index.html
+
+# --- Закрываем служебные файлы ---
+<FilesMatch "^(config\.local\.php|.*\.jsonl|.*\.md)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# --- Сжатие ---
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# --- Кеш статики ---
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/webp "access plus 30 days"
+    ExpiresByType font/woff2 "access plus 365 days"
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# --- Базовые заголовки безопасности ---
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>

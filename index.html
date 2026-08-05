@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Работа продавцом-консультантом — сеть зоомагазинов «Кот и Пёс», Чебоксары</title>
+<meta name="description" content="Вакансия продавца-консультанта в сети зоомагазинов «Кот и Пёс» в Чебоксарах. Заполните анкету за 3 минуты — мы перезвоним в удобное время.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Работа в сети зоомагазинов «Кот и Пёс»">
+<meta property="og:description" content="Ищем продавца-консультанта. Заполните анкету за 3 минуты — мы перезвоним.">
+<meta property="og:image" content="assets/img/logo-full.png">
+<meta name="theme-color" content="#0b7a2c">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="preload" href="assets/fonts/nunito-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <!-- На цветном фоне логотип только с белой обводкой — требование брендбука, стр. 8 -->
+    <a class="site-header__logo" href="./" aria-label="Кот и Пёс — сеть зоомагазинов">
+      <picture>
+        <source srcset="assets/img/logo-full-outline.webp" type="image/webp">
+        <img src="assets/img/logo-full-outline.png" width="640" height="370" alt="Кот и Пёс — сеть зоомагазинов">
+      </picture>
+    </a>
+    <div class="site-header__contact">
+      <a class="header-phone" href="tel:+79063870807">
+        <span class="header-phone__label">Отдел подбора</span>
+        8 906 387 0807
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ Герой ============ -->
+  <section class="hero paws">
+    <div class="wrap hero__inner">
+      <div class="hero__text">
+        <span class="hero__badge">Вакансия открыта · Чебоксары</span>
+        <h1>Работа рядом с теми, кто <em>виляет хвостом</em></h1>
+        <p class="hero__lead">
+          Сеть зоомагазинов «Кот и Пёс» ищет продавца-консультанта.
+          Расскажите о себе — анкета займёт около трёх минут.
+        </p>
+        <ul class="hero__facts">
+          <!-- TEXT-CHECK: пункты ниже подтверждены анкетой и брендбуком. Условия работы (график, оклад) заказчик ещё не передал. -->
+          <li>Оплачиваемая стажировка — 1530–1890 ₽ за 7–10 часов</li>
+          <li>Пять магазинов в городе — выберем ближайший к вам</li>
+          <li>Ответ по анкете — звонком в удобное для вас время</li>
+        </ul>
+        <div class="hero__cta">
+          <a class="btn" href="#quiz">Заполнить анкету</a>
+          <span class="hero__note">7 вопросов · ~3 минуты</span>
+        </div>
+      </div>
+      <div class="hero__mascot">
+        <span class="hero__mascot-plate" aria-hidden="true"></span>
+        <picture>
+          <source srcset="assets/img/dog-bone.webp" type="image/webp">
+          <img src="assets/img/dog-bone.png" width="570" height="900" alt="" role="presentation" fetchpriority="high">
+        </picture>
+      </div>
+    </div>
+    <svg class="hero__wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 60V26c180-26 360-26 540 0s360 26 540 0 240-26 360 0v34z"></path>
+    </svg>
+  </section>
+
+  <!-- ============ Квиз ============ -->
+  <section class="quiz-section" id="quiz">
+    <div class="wrap">
+
+      <div class="quiz" id="quizCard">
+
+        <div class="quiz__progress">
+          <div class="quiz__progress-head">
+            <span class="quiz__step-label" id="stepLabel">Шаг 1 из 8</span>
+            <span class="quiz__percent" id="percentLabel">0%</span>
+          </div>
+          <div class="progress" role="progressbar" aria-labelledby="stepLabel" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressTrack">
+            <div class="progress__bar" id="progressBar"></div>
+          </div>
+        </div>
+
+        <form class="quiz__body" id="quizForm" novalidate>
+
+          <!-- Ловушка для ботов: люди это поле не видят -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="nickname">Не заполняйте это поле</label>
+            <input type="text" id="nickname" name="nickname" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="started_at" id="startedAt" value="">
+
+          <!-- --- Шаг 1 --- -->
+          <fieldset class="step" data-step="1" aria-labelledby="q1">
+            <div class="step__head">
+              <picture class="step__mascot">
+                <source srcset="assets/img/cat-yarn.webp" type="image/webp">
+                <img src="assets/img/cat-yarn.png" width="700" height="733" alt="" role="presentation">
+              </picture>
+              <div>
+                <p class="step__legend" id="q1">Ваше ФИО, возраст, семейное положение (дети, их возраст)</p>
+                <p class="step__hint">Начнём со знакомства</p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="fio">Фамилия, имя, отчество</label>
+              <input class="input" type="text" id="fio" name="fio" autocomplete="name" data-required data-label="ФИО">
+              <p class="field__error" data-error-for="fio"></p>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label class="field__label" for="age">Возраст</label>
+                <!-- 16 лет: общий возраст приёма на работу по ТК РФ. С 14–15 лет наём
+                     требует согласия родителей и органа опеки — если заказчик готов
+                     их оформлять, значение можно вернуть к 14. -->
+                <input class="input" type="number" id="age" name="age" min="16" max="80" inputmode="numeric" data-required data-label="Возраст">
+                <p class="field__error" data-error-for="age"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="family">Семейное положение</label>
+                <select class="select" id="family" name="family">
+                  <option value="">Не выбрано</option>
+                  <option>Не женат / не замужем</option>
+                  <option>Женат / замужем</option>
+                  <option>В отношениях</option>
+                  <option>Предпочитаю не указывать</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="children">Дети и их возраст <span class="opt">— если есть</span></label>
+              <input class="input" type="text" id="children" name="children" placeholder="Например: дочь 7 лет, сын 3 года">
+            </div>
+          </fieldset>
+
+          <!-- --- Шаг 2 --- -->
+          <fieldset class="step" data-step="2" aria-labelledby="q2" hidden>
+            <div class="step__head">
+              <picture class="step__mascot">
+                <source srcset="assets/img/dog-ball.webp" type="image/webp">
+                <img src="assets/img/dog-ball.png" width="560" height="710" alt="" role="presentation">
+              </picture>
+              <div>
+                <p class="step__legend" id="q2">Почему откликнулись на нашу вакансию? Чем вам интересна работа продавца-консультанта товаров для животных?</p>
+                <p class="step__hint">Отвечайте своими словами — нам важен именно ваш ответ</p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="motivation">Ваш ответ</label>
+              <textarea class="textarea" id="motivation" name="motivation" data-required data-label="Ответ" data-min="20" placeholder="Несколько предложений будет достаточно"></textarea>
+              <p class="field__error" data-error-for="motivation"></p>
+            </div>
+          </fieldset>
+
+          <!-- --- Шаг 3 --- -->
+          <fieldset class="step" data-step="3" aria-labelledby="q3" hidden>
+            <div class="step__head">
+              <picture class="step__mascot">
+                <source srcset="assets/img/cat-frog.webp" type="image/webp">
+                <img src="assets/img/cat-frog.png" width="560" height="839" alt="" role="presentation">
+              </picture>
+              <div>
+                <p class="step__legend" id="q3">Есть ли у вас домашние питомцы?</p>
+                <p class="step__hint">Если да — расскажите о них: как ухаживаете, чем кормите</p>
+              </div>
+            </div>
+
+            <div class="options options--inline" role="radiogroup" aria-labelledby="petsLabel" data-required-group data-label="Ответ о питомцах">
+              <span class="visually-hidden" id="petsLabel">Есть ли у вас домашние питомцы</span>
+              <label class="option">
+                <input type="radio" name="has_pets" value="Да" data-toggle="petsDetails" data-toggle-when="Да">
+                <span class="option__mark" aria-hidden="true"></span>
+                <span class="option__text">Да</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="has_pets" value="Нет" data-toggle="petsDetails" data-toggle-when="Да">
+                <span class="option__mark" aria-hidden="true"></span>
+                <span class="option__text">Нет</span>
+              </label>
+            </div>
+            <p class="field__error" data-error-for="has_pets"></p>
+
+            <div class="conditional" id="petsDetails" hidden>
+              <div class="field">
+                <label class="field__label" for="pets_details">Расскажите о питомцах</label>
+                <textarea class="textarea" id="pets_details" name="pets_details" placeholder="Кто у вас живёт, как ухаживаете, чем кормите"></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- --- Шаг 4 --- -->
+          <fieldset class="step" data-step="4" aria-labelledby="q4" hidden>
+            <div class="step__head">
+              <picture class="step__mascot">
+                <source srcset="assets/img/cat-yarn.webp" type="image/webp">
+                <img src="assets/img/cat-yarn.png" width="700" height="733" alt="" role="presentation">
+              </picture>
+              <div>
+                <p class="step__legend" id="q4">Посещаете ли вы зоомагазины?</p>
+                <p class="step__hint">Если да — как часто и что покупаете</p>
+              </div>
+            </div>
+
+            <div class="options options--inline" role="radiogroup" aria-labelledby="shopsLabel" data-required-group data-label="Ответ о зоомагазинах">
+              <span class="visually-hidden" id="shopsLabel">Посещаете ли вы зоомагазины</span>
+              <label class="option">
+                <input type="radio" name="visits_shops" value="Да" data-toggle="shopsDetails" data-toggle-when="Да">
+                <span class="option__mark" aria-hidden="true"></span>
+                <span class="option__text">Да</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="visits_shops" value="Нет" data-toggle="shopsDetails" data-toggle-when="Да">
+                <span class="option__mark" aria-hidden="true"></span>
+                <span class="option__text">Нет</span>
+              </label>
+            </div>
+            <p class="field__error" data-error-for="visits_shops"></p>
+
+            <div class="conditional" id="shopsDetails" hidden>
+              <div class="field-row">
+                <div class="field">
+                  <label class="field__label" for="visit_frequency">Как часто</label>
+                  <select class="select" id="visit_frequency" name="visit_frequency">
+                    <option value="">Не выбрано</option>
+                    <option>Несколько раз в неделю</option>
+                    <option>Раз в неделю</option>
+                    <option>Раз в месяц</option>
+                    <option>Реже раза в месяц</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="purchases">Что покупаете</label>
+                  <input class="input" type="text" id="purchases" name="purchases" placeholder="Например: корм, наполнитель, игрушки">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- --- Шаг 5 --- -->
+          <fieldset class="step" data-step="5" aria-labelledby="q5" hidden>
+            <div class="step__head">
+              <picture class="step__mascot">
+                <source srcset="assets/img/dog-bone.webp" type="image/webp">
+                <img src="assets/img/dog-bone.png" width="570" height="900" alt="" role="presentation">
+              </picture>
+              <div>
+                <p class="step__legend" id="q5">Готовы ли вы к оплачиваемой стажировке?</p>
+                <p class="step__hint">Это первый рабочий этап, он оплачивается</p>
+              </div>
+            </div>
+
+            <div class="callout">
+              <span aria-hidden="true">💰</span>
+              <span>Оплата стажировки — <strong>1530–1890 ₽</strong> за смену 7–10 часов.</span>
+            </div>
+
+            <div class="options" role="radiogroup" aria-labelledby="internLabel" data-required-group data-label="Ответ о стажировке">
+              <span class="visually-hidden" id="internLabel">Готовы ли вы к оплачиваемой стажировке</span>
+              <label class="option">
+                <input type="radio" name="internship" value="Готов(а)">
+                <span class="option__mark" aria-hidden="true"></span>
+                <span class="option__text">Да, готов(а)</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="internship" value="Нужно обсудить">
+                <span class="option__mark" aria-hidden="true"></span>
+                <span class="option__text">Нужно обсудить<small>Расскажем подробности по телефону</small></span>
+              </label>
+              <label class="option">
+                <input type="radio" name="internship" value="Не готов(а)">
+                <span class="option__mark" aria-hidden="true"></span>
+                <span class="option__text">Пока не готов(а)</span>
+              </label>
+            </div>
+            <p class="field__error" data-error-for="internship"></p>
+          </fieldset>
+
+          <!-- --- Шаг 6 --- -->
+          <fieldset class="step" data-step="6" aria-labelledby="q6" hidden>
+            <div class="step__head">
+              <picture class="step__mascot">
+                <source srcset="assets/img/dog-ball.webp" type="image/webp">
+                <img src="assets/img/dog-ball.png" width="560" height="710" alt="" role="presentation">
+              </picture>
+              <div>
+                <p class="step__legend" id="q6">За последние 12 месяцев какая ваша минимальная и максимальная начисленная зарплата?</p>
+                <p class="step__hint">Укажите суммы в рублях — это поможет обсудить условия предметно</p>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label class="field__label" for="salary_min">Минимальная, ₽</label>
+                <input class="input" type="number" id="salary_min" name="salary_min" min="0" step="500" inputmode="numeric" data-required data-label="Минимальная зарплата">
+                <p class="field__error" data-error-for="salary_min"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="salary_max">Максимальная, ₽</label>
+                <input class="input" type="number" id="salary_max" name="salary_max" min="0" step="500" inputmode="numeric" data-required data-label="Максимальная зарплата">
+                <p class="field__error" data-error-for="salary_max"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- --- Шаг 7 --- -->
+          <fieldset class="step" data-step="7" aria-labelledby="q7" hidden>
+            <div class="step__head">
+              <picture class="step__mascot">
+                <source srcset="assets/img/cat-frog.webp" type="image/webp">
+                <img src="assets/img/cat-frog.png" width="560" height="839" alt="" role="presentation">
+              </picture>
+              <div>
+                <p class="step__legend" id="q7">Контактный телефон. Удобное время для звонка</p>
+                <p class="step__hint">Позвоним именно в это время</p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="phone">Телефон</label>
+              <input class="input" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-required data-label="Телефон" data-phone>
+              <p class="field__error" data-error-for="phone"></p>
+            </div>
+
+            <div class="field">
+              <span class="field__label" id="callTimeLabel">Удобное время для звонка</span>
+              <div class="options options--inline" role="radiogroup" aria-labelledby="callTimeLabel" data-required-group data-label="Удобное время">
+                <label class="option">
+                  <input type="radio" name="call_time" value="Утром (9:00–12:00)">
+                  <span class="option__mark" aria-hidden="true"></span>
+                  <span class="option__text">Утром<small>9:00–12:00</small></span>
+                </label>
+                <label class="option">
+                  <input type="radio" name="call_time" value="Днём (12:00–17:00)">
+                  <span class="option__mark" aria-hidden="true"></span>
+                  <span class="option__text">Днём<small>12:00–17:00</small></span>
+                </label>
+                <label class="option">
+                  <input type="radio" name="call_time" value="Вечером (17:00–20:00)">
+                  <span class="option__mark" aria-hidden="true"></span>
+                  <span class="option__text">Вечером<small>17:00–20:00</small></span>
+                </label>
+                <label class="option">
+                  <input type="radio" name="call_time" value="Любое время">
+                  <span class="option__mark" aria-hidden="true"></span>
+                  <span class="option__text">Любое<small>Когда удобно вам</small></span>
+                </label>
+              </div>
+              <p class="field__error" data-error-for="call_time"></p>
+            </div>
+          </fieldset>
+
+          <!-- --- Шаг 8 --- -->
+          <fieldset class="step" data-step="8" aria-labelledby="q8" hidden>
+            <div class="step__head">
+              <picture class="step__mascot">
+                <source srcset="assets/img/dog-bone.webp" type="image/webp">
+                <img src="assets/img/dog-bone.png" width="570" height="900" alt="" role="presentation">
+              </picture>
+              <div>
+                <p class="step__legend" id="q8">Последний шаг — и анкета уйдёт к нам</p>
+                <p class="step__hint">Проверьте телефон на предыдущем шаге и отправляйте</p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="email">E-mail <span class="opt">— если хотите получить ответ письмом</span></label>
+              <input class="input" type="email" id="email" name="email" autocomplete="email" placeholder="name@example.com" data-label="E-mail">
+              <p class="field__error" data-error-for="email"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="comment">Что-то ещё о себе <span class="opt">— необязательно</span></label>
+              <textarea class="textarea" id="comment" name="comment" placeholder="Опыт работы, пожелания по графику, вопросы к нам"></textarea>
+            </div>
+
+            <label class="consent">
+              <input type="checkbox" name="consent" id="consent" value="1" data-required data-label="Согласие">
+              <span>
+                Я даю <a href="#consent-text" data-modal="consentModal">согласие на обработку персональных данных</a>
+                на указанных в нём условиях и подтверждаю, что ознакомился(ась) с
+                <a href="#policy" data-modal="policyModal">политикой обработки персональных данных</a>.
+              </span>
+            </label>
+            <p class="field__error" data-error-for="consent"></p>
+
+            <div class="form-alert" id="formAlert" hidden role="alert"></div>
+          </fieldset>
+
+          <!-- --- Навигация --- -->
+          <div class="quiz__nav">
+            <button type="button" class="btn btn--ghost" id="btnPrev" hidden>← Назад</button>
+            <button type="button" class="btn" id="btnNext">Далее →</button>
+            <button type="submit" class="btn" id="btnSubmit" hidden>Отправить анкету</button>
+          </div>
+
+        </form>
+
+        <!-- --- Экран «спасибо» --- -->
+        <div class="thanks" id="thanks" hidden>
+          <picture>
+            <source srcset="assets/img/dog-ball.webp" type="image/webp">
+            <img src="assets/img/dog-ball.png" width="560" height="710" alt="" role="presentation">
+          </picture>
+          <h2>Анкета отправлена!</h2>
+          <p>
+            Спасибо, что рассказали о себе. Мы прочитаем анкету и позвоним
+            в указанное вами удобное время.
+          </p>
+          <a class="thanks__phone" href="tel:+79063870807">8 906 387 0807</a>
+          <p><small>Если вопрос срочный — звоните сами, мы будем рады.</small></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Как проходит отбор ============ -->
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section__title reveal">Как проходит <span>отбор</span></h2>
+      <div class="cards">
+        <div class="card reveal">
+          <div class="card__icon" aria-hidden="true">1</div>
+          <h3>Анкета</h3>
+          <p>Вы отвечаете на семь вопросов на этой странице. Это занимает около трёх минут.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card__icon" aria-hidden="true">2</div>
+          <h3>Звонок</h3>
+          <p>Мы читаем анкету и звоним в то время, которое вы указали. Обсуждаем детали и отвечаем на вопросы.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card__icon" aria-hidden="true">3</div>
+          <h3>Оплачиваемая стажировка</h3>
+          <p>Смотрим друг на друга в деле: 7–10 часов, оплата 1530–1890 ₽.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Магазины ============ -->
+  <!-- TEXT-CHECK: адреса и телефоны взяты из брендбука 2021 года, подтвердить у заказчика перед публикацией -->
+  <section class="section section--green paws">
+    <div class="wrap">
+      <h2 class="section__title reveal">Наши магазины <span>в Чебоксарах</span></h2>
+      <div class="stores">
+        <div class="store reveal">
+          <span class="store__num" aria-hidden="true">1</span>
+          <div>
+            <span class="store__addr">пр. М. Горького, 34/2</span>
+            <a class="store__phone" href="tel:+78352434360">43-43-60</a>
+          </div>
+        </div>
+        <div class="store reveal">
+          <span class="store__num" aria-hidden="true">2</span>
+          <div>
+            <span class="store__addr">пр. М. Горького, 10, стр. 1</span>
+            <span class="store__meta">ТРЦ «Волжский»</span>
+            <a class="store__phone" href="tel:+78352684360">68-43-60</a>
+          </div>
+        </div>
+        <div class="store reveal">
+          <span class="store__num" aria-hidden="true">3</span>
+          <div>
+            <span class="store__addr">Московский проспект, 10</span>
+            <span class="store__meta">рядом с «Рубль Бум» и «Акконд»</span>
+            <a class="store__phone" href="tel:+78352294360">29-43-60</a>
+          </div>
+        </div>
+        <div class="store reveal">
+          <span class="store__num" aria-hidden="true">4</span>
+          <div>
+            <span class="store__addr">пр. 9-ой Пятилетки, 16/1</span>
+            <a class="store__phone" href="tel:+78352374360">37-43-60</a>
+          </div>
+        </div>
+        <div class="store reveal">
+          <span class="store__num" aria-hidden="true">5</span>
+          <div>
+            <span class="store__addr">Ленинского Комсомола, 25</span>
+            <a class="store__phone" href="tel:+78352484360">48-43-60</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Призыв ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="strip reveal">
+        <h2>Понравилось? Заполните анкету — это три минуты</h2>
+        <a class="btn" href="#quiz">К анкете</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div>
+      <picture>
+        <source srcset="assets/img/logo-full.webp" type="image/webp">
+        <img src="assets/img/logo-full.png" width="640" height="347" alt="Кот и Пёс — сеть зоомагазинов">
+      </picture>
+      <p>Сеть зоомагазинов в Чебоксарах</p>
+    </div>
+    <div>
+      <strong>ИП Григорьев А. С.</strong>
+      <p>г. Чебоксары, пр. М. Горького, 34/2</p>
+    </div>
+    <div>
+      <strong>Вопросы по вакансии</strong>
+      <p><a href="tel:+79063870807">8 906 387 0807</a></p>
+      <p><a href="mailto:zoo-rabota21@mail.ru">zoo-rabota21@mail.ru</a></p>
+    </div>
+    <div>
+      <strong>Документы</strong>
+      <ul class="footer-links">
+        <li><a href="#policy" data-modal="policyModal">Политика обработки персональных данных</a></li>
+        <li><a href="#consent-text" data-modal="consentModal">Согласие на обработку персональных данных</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     Юридические тексты. Перед публикацией заказчик заполняет всё,
+     что помечено классом "fillme": ОГРНИП, ИНН, адрес, домен, дату
+     редакции и хостинг-провайдера. Состав персональных данных ниже
+     соответствует полям формы — при изменении анкеты правьте оба места.
+     ============================================================ -->
+
+<dialog class="modal" id="policyModal" aria-labelledby="policyTitle">
+  <div class="modal__head">
+    <h2 class="modal__title" id="policyTitle">Политика в отношении обработки персональных данных</h2>
+    <button type="button" class="modal__close" data-modal-close aria-label="Закрыть">✕</button>
+  </div>
+  <div class="modal__body">
+
+    <h3>1. Общие положения</h3>
+    <p>
+      Настоящая Политика определяет порядок обработки и защиты персональных данных
+      физических лиц, направляющих анкету на вакансию через сайт
+      <span class="fillme">https://______</span> (далее — Сайт), и разработана
+      во исполнение требований Федерального закона от 27.07.2006 № 152-ФЗ
+      «О персональных данных».
+    </p>
+    <p>
+      <strong>Оператор персональных данных:</strong> Индивидуальный предприниматель
+      Григорьев А. С., ОГРНИП <span class="fillme">______</span>,
+      ИНН <span class="fillme">______</span>, адрес:
+      <span class="fillme">______</span>.
+      Контакты для обращений по вопросам обработки персональных данных:
+      <a href="mailto:zoo-rabota21@mail.ru">zoo-rabota21@mail.ru</a>,
+      телефон <a href="tel:+79063870807">8 906 387 0807</a>.
+    </p>
+    <p>
+      Политика распространяется на все персональные данные, которые Оператор получает
+      через форму анкеты на Сайте. Использование Сайта без отправки анкеты не влечёт
+      обработки персональных данных, кроме технических сведений, указанных в разделе 3.
+    </p>
+
+    <h3>2. Цель обработки</h3>
+    <p>
+      Единственная цель обработки — рассмотрение кандидатуры соискателя на вакансию
+      продавца-консультанта, связь с соискателем для уточнения сведений анкеты,
+      приглашение на собеседование и оплачиваемую стажировку, а также ведение учёта
+      поступивших откликов.
+    </p>
+    <p>
+      Персональные данные не используются для рекламных рассылок, не передаются в
+      рекламные сети и не применяются для принятия решений исключительно на основании
+      автоматизированной обработки.
+    </p>
+
+    <h3>3. Состав обрабатываемых персональных данных</h3>
+    <p>Через форму анкеты Оператор получает:</p>
+    <ul>
+      <li>фамилию, имя, отчество;</li>
+      <li>возраст;</li>
+      <li>сведения о семейном положении, а также о детях и их возрасте — если соискатель указал их добровольно;</li>
+      <li>контактный телефон и удобное время для звонка;</li>
+      <li>адрес электронной почты — если соискатель указал его добровольно;</li>
+      <li>сведения о минимальном и максимальном размере начисленной заработной платы за последние 12 месяцев;</li>
+      <li>сведения о наличии домашних питомцев и уходе за ними — если соискатель указал их добровольно;</li>
+      <li>сведения о посещении зоомагазинов и совершаемых покупках — если соискатель указал их добровольно;</li>
+      <li>ответ о готовности к оплачиваемой стажировке;</li>
+      <li>содержание свободных ответов соискателя: мотивация отклика и дополнительный комментарий.</li>
+    </ul>
+    <p>Дополнительно при отправке анкеты фиксируются технические сведения:</p>
+    <ul>
+      <li>дата и время отправки;</li>
+      <li>IP-адрес устройства, с которого отправлена анкета;</li>
+      <li>адрес страницы отправки и сведения о браузере (User-Agent).</li>
+    </ul>
+    <p>
+      Оператор не запрашивает и не обрабатывает специальные категории персональных
+      данных (о состоянии здоровья, национальной и расовой принадлежности,
+      политических и религиозных убеждениях), а также биометрические персональные
+      данные. Соискателю не следует указывать такие сведения в свободных полях анкеты.
+    </p>
+
+    <h3>4. Правовые основания</h3>
+    <ul>
+      <li>согласие субъекта персональных данных на обработку его персональных данных
+        (пункт 1 части 1 статьи 6 Закона № 152-ФЗ), которое даётся отметкой
+        соответствующего поля перед отправкой анкеты;</li>
+      <li>необходимость обработки для заключения трудового договора по инициативе
+        субъекта персональных данных (пункт 5 части 1 статьи 6 Закона № 152-ФЗ).</li>
+    </ul>
+
+    <h3>5. Порядок и способы обработки</h3>
+    <p>
+      Обработка осуществляется как с использованием средств автоматизации, так и без
+      их использования и включает: сбор, запись, систематизацию, накопление, хранение,
+      уточнение (обновление, изменение), извлечение, использование, блокирование,
+      удаление и уничтожение персональных данных.
+    </p>
+    <p>
+      Анкета направляется на служебный адрес электронной почты Оператора и
+      сохраняется в файловом хранилище Сайта, доступ к которому закрыт для
+      посетителей. Базы данных, содержащие персональные данные граждан Российской
+      Федерации, находятся на территории Российской Федерации.
+    </p>
+
+    <h3>6. Передача персональных данных</h3>
+    <p>
+      Оператор не передаёт персональные данные третьим лицам, за исключением случаев,
+      прямо предусмотренных законодательством Российской Федерации.
+    </p>
+    <p>
+      Размещение Сайта и электронной почты обеспечивает хостинг-провайдер
+      <span class="fillme">______</span>, действующий по поручению Оператора
+      в соответствии с частью 3 статьи 6 Закона № 152-ФЗ и обязанный соблюдать
+      конфиденциальность и требования к защите персональных данных.
+    </p>
+    <p>Трансграничная передача персональных данных не осуществляется.</p>
+
+    <h3>7. Сроки обработки и хранения</h3>
+    <p>
+      Персональные данные обрабатываются до достижения цели обработки, но не более
+      одного года с даты получения анкеты, если соискатель не отозвал согласие ранее.
+      По истечении срока или после отзыва согласия данные уничтожаются, а анкета
+      удаляется из почты и файлового хранилища.
+    </p>
+    <p>
+      Если по итогам рассмотрения анкеты с соискателем заключается трудовой договор,
+      дальнейшая обработка его персональных данных осуществляется в соответствии с
+      трудовым законодательством Российской Федерации.
+    </p>
+
+    <h3>8. Права субъекта персональных данных</h3>
+    <p>Соискатель вправе:</p>
+    <ul>
+      <li>получать сведения об обработке своих персональных данных, предусмотренные
+        частью 7 статьи 14 Закона № 152-ФЗ;</li>
+      <li>требовать уточнения персональных данных, их блокирования или уничтожения,
+        если они являются неполными, устаревшими, неточными, незаконно полученными
+        или не являются необходимыми для заявленной цели обработки;</li>
+      <li>отозвать согласие на обработку персональных данных в любой момент;</li>
+      <li>обжаловать действия или бездействие Оператора в Роскомнадзоре или в судебном порядке.</li>
+    </ul>
+    <p>
+      Обращение направляется на <a href="mailto:zoo-rabota21@mail.ru">zoo-rabota21@mail.ru</a>
+      либо по адресу Оператора и рассматривается в сроки, установленные
+      законодательством Российской Федерации.
+    </p>
+
+    <h3>9. Меры по защите персональных данных</h3>
+    <p>
+      Оператор принимает правовые, организационные и технические меры для защиты
+      персональных данных от неправомерного или случайного доступа, уничтожения,
+      изменения, блокирования, копирования и распространения: ограничивает круг лиц,
+      имеющих доступ к анкетам, использует защищённое соединение (HTTPS), закрывает
+      служебные каталоги Сайта от публичного доступа и назначает ответственного за
+      организацию обработки персональных данных.
+    </p>
+
+    <h3>10. Изменение Политики</h3>
+    <p>
+      Оператор вправе вносить изменения в настоящую Политику. Действующая редакция
+      постоянно доступна на Сайте по ссылке в форме анкеты и в подвале страницы.
+    </p>
+
+    <p class="modal__meta">
+      Редакция от <span class="fillme">__.__.____</span>.
+      Оператор: ИП Григорьев А. С.
+    </p>
+  </div>
+</dialog>
+
+<dialog class="modal" id="consentModal" aria-labelledby="consentTitle">
+  <div class="modal__head">
+    <h2 class="modal__title" id="consentTitle">Согласие на обработку персональных данных</h2>
+    <button type="button" class="modal__close" data-modal-close aria-label="Закрыть">✕</button>
+  </div>
+  <div class="modal__body">
+
+    <p>
+      Отмечая соответствующее поле перед отправкой анкеты, я, субъект персональных
+      данных, свободно, своей волей и в своём интересе даю согласие Индивидуальному
+      предпринимателю Григорьеву А. С., ОГРНИП <span class="fillme">______</span>,
+      ИНН <span class="fillme">______</span>, адрес:
+      <span class="fillme">______</span> (далее — Оператор), на обработку моих
+      персональных данных на условиях, изложенных ниже.
+    </p>
+
+    <h3>1. Цель обработки</h3>
+    <p>
+      Рассмотрение моей кандидатуры на вакансию продавца-консультанта, связь со мной
+      для уточнения сведений анкеты, приглашение на собеседование и оплачиваемую
+      стажировку.
+    </p>
+
+    <h3>2. Перечень персональных данных</h3>
+    <p>Согласие даётся на обработку следующих персональных данных:</p>
+    <ul>
+      <li>фамилия, имя, отчество; возраст;</li>
+      <li>семейное положение, сведения о детях и их возрасте — в объёме, указанном мной;</li>
+      <li>контактный телефон, удобное время для звонка, адрес электронной почты —
+        в объёме, указанном мной;</li>
+      <li>сведения о минимальном и максимальном размере начисленной заработной платы
+        за последние 12 месяцев;</li>
+      <li>сведения о домашних питомцах и уходе за ними, о посещении зоомагазинов и
+        покупках — в объёме, указанном мной;</li>
+      <li>ответ о готовности к оплачиваемой стажировке и содержание моих свободных
+        ответов в анкете;</li>
+      <li>дата и время отправки анкеты, IP-адрес устройства, адрес страницы отправки
+        и сведения о браузере.</li>
+    </ul>
+
+    <h3>3. Перечень действий и способы обработки</h3>
+    <p>
+      Согласие даётся на сбор, запись, систематизацию, накопление, хранение, уточнение
+      (обновление, изменение), извлечение, использование, блокирование, удаление и
+      уничтожение моих персональных данных. Обработка осуществляется как с
+      использованием средств автоматизации, так и без их использования.
+    </p>
+    <p>
+      Я уведомлён(а), что хранение и техническую обработку данных по поручению
+      Оператора обеспечивает хостинг-провайдер <span class="fillme">______</span>.
+      Иным третьим лицам мои данные не передаются, трансграничная передача
+      не осуществляется.
+    </p>
+
+    <h3>4. Срок действия согласия и порядок отзыва</h3>
+    <p>
+      Согласие действует до достижения цели обработки, но не более одного года с даты
+      отправки анкеты, либо до его отзыва.
+    </p>
+    <p>
+      Я вправе отозвать согласие в любой момент, направив письменное заявление на
+      адрес электронной почты
+      <a href="mailto:zoo-rabota21@mail.ru">zoo-rabota21@mail.ru</a> или по адресу
+      Оператора. В случае отзыва Оператор прекращает обработку и уничтожает мои
+      персональные данные в срок, не превышающий 30 дней с даты получения заявления,
+      за исключением случаев, когда обработка должна быть продолжена в силу закона.
+    </p>
+
+    <h3>5. Подтверждения</h3>
+    <ul>
+      <li>Указанные мной сведения являются достоверными, я предоставляю их добровольно
+        и понимаю, что от их полноты зависит рассмотрение моей кандидатуры.</li>
+      <li>Я ознакомлен(а) с Политикой в отношении обработки персональных данных,
+        размещённой на этом сайте.</li>
+      <li>Мне разъяснены права субъекта персональных данных, предусмотренные
+        Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных».</li>
+      <li>Если на момент отправки анкеты мне не исполнилось 18 лет, согласие даётся
+        с ведома и одобрения моего законного представителя.</li>
+    </ul>
+
+    <p class="modal__meta">
+      Редакция от <span class="fillme">__.__.____</span>.
+      Согласие фиксируется в момент отправки анкеты вместе с датой, временем
+      и IP-адресом устройства.
+    </p>
+  </div>
+</dialog>
+
+<script src="js/quiz.js" defer></script>
+</body>
+</html>
