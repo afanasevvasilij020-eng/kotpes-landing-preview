@@ -15,6 +15,8 @@
 <link rel="preload" href="assets/fonts/nunito-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/style.css">
+<!-- Класс js включает анимацию появления секций. Без JS контент виден сразу. -->
+<script src="js/boot.js"></script>
 </head>
 <body>
 
@@ -48,12 +50,21 @@
           Сеть зоомагазинов «Кот и Пёс» ищет продавца-консультанта.
           Расскажите о себе — анкета займёт около трёх минут.
         </p>
-        <ul class="hero__facts">
-          <!-- TEXT-CHECK: пункты ниже подтверждены анкетой и брендбуком. Условия работы (график, оклад) заказчик ещё не передал. -->
-          <li>Оплачиваемая стажировка — 1530–1890 ₽ за 7–10 часов</li>
-          <li>Пять магазинов в городе — выберем ближайший к вам</li>
-          <li>Ответ по анкете — звонком в удобное для вас время</li>
-        </ul>
+        <!-- TEXT-CHECK: формулировки предложены заказчиком. «Выше, чем в федеральных
+             сетях» — сравнительное утверждение, заказчику стоит быть готовым его
+             обосновать. Количество магазинов (6) заказчик подтвердил устно, шестой
+             адрес пока не передан. -->
+        <details class="offer" open>
+          <summary class="offer__toggle">
+            <span class="offer__label">Что предлагаем</span>
+            <span class="offer__chevron" aria-hidden="true"></span>
+          </summary>
+          <ul class="offer__list">
+            <li>Хорошую зарплату — выше, чем в федеральных сетях</li>
+            <li>6 магазинов в городе — выберите ближайший к вам</li>
+            <li>Оплачиваемую стажировку</li>
+          </ul>
+        </details>
         <div class="hero__cta">
           <a class="btn" href="#quiz">Заполнить анкету</a>
           <span class="hero__note">7 вопросов · ~3 минуты</span>
@@ -425,6 +436,45 @@
     </div>
   </section>
 
+  <!-- ============ Кого мы ищем ============ -->
+  <!-- ФОТО: сейчас стоят заглушки assets/img/team-1.jpg и team-2.jpg.
+       Чтобы поставить настоящие снимки, залейте свои файлы на хостинг
+       ПОД ТЕМИ ЖЕ ИМЕНАМИ — код править не нужно.
+       Лучше всего вертикальный кадр примерно 900×1100 px. -->
+  <section class="section who">
+    <div class="wrap who__inner">
+
+      <figure class="photo photo--cat reveal">
+        <img src="assets/img/team-1.jpg" width="900" height="1100" loading="lazy"
+             alt="Команда сети зоомагазинов «Кот и Пёс» на корпоративе">
+      </figure>
+
+      <div class="who__text">
+        <h2 class="section__title reveal">Кого мы <span>ищем</span></h2>
+        <ul class="who__list reveal">
+          <li>Вам интересна эта сфера и вы готовы самостоятельно изучать материал</li>
+          <li>Любите животных и готовы за ними ухаживать</li>
+          <li>Ответственный и коммуникабельный человек</li>
+        </ul>
+
+        <h3 class="who__subtitle reveal">Особенно ценим опыт работы</h3>
+        <ul class="who__tags reveal">
+          <li>в ветклиниках</li>
+          <li>в магазинах зоотоваров</li>
+          <li>заводчиков и аквариумистов</li>
+          <li>в общепите</li>
+          <li>выпускников и студентов 4–5 курсов факультета ветеринарии и зоотехники</li>
+        </ul>
+      </div>
+
+      <figure class="photo photo--dog reveal">
+        <img src="assets/img/team-2.jpg" width="900" height="1100" loading="lazy"
+             alt="Сотрудники «Кот и Пёс» на корпоративном мероприятии">
+      </figure>
+
+    </div>
+  </section>
+
   <!-- ============ Как проходит отбор ============ -->
   <section class="section">
     <div class="wrap">
@@ -490,6 +540,16 @@
           <div>
             <span class="store__addr">Ленинского Комсомола, 25</span>
             <a class="store__phone" href="tel:+78352484360">48-43-60</a>
+          </div>
+        </div>
+        <!-- TEXT-CHECK: заказчик говорит о шести магазинах, в брендбуке 2021 года
+             только пять адресов. Заменить заглушку на реальный адрес и телефон
+             либо удалить карточку и поправить «6 магазинов» в блоке «Что предлагаем». -->
+        <div class="store store--pending reveal">
+          <span class="store__num" aria-hidden="true">6</span>
+          <div>
+            <span class="store__addr">Адрес уточняется</span>
+            <span class="store__meta">Шестой магазин сети</span>
           </div>
         </div>
       </div>

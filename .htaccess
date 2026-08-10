@@ -4,6 +4,16 @@
 
 DirectoryIndex index.html
 
+# --- Только HTTPS ---
+# Форма передаёт персональные данные, по HTTP её открывать нельзя.
+# Включать после того, как для субдомена выпущен сертификат.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
 # --- Закрываем служебные файлы ---
 <FilesMatch "^(config\.local\.php|.*\.jsonl|.*\.md)$">
     <IfModule mod_authz_core.c>
@@ -33,9 +43,16 @@ DirectoryIndex index.html
     ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
 
-# --- Базовые заголовки безопасности ---
+# --- Заголовки безопасности ---
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
-    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-Frame-Options "DENY"
+
+    # Страница самодостаточна: внешних скриптов, шрифтов и картинок нет,
+    # поэтому политика максимально узкая. data: нужен для SVG-иконок в CSS.
+    Header set Content-Security-Policy "default-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'"
+
+    # HSTS включать только когда HTTPS уже работает на субдомене
+    Header always set Strict-Transport-Security "max-age=15552000" env=HTTPS
 </IfModule>

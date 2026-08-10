@@ -267,6 +267,90 @@ a:hover {
     center / 0.85rem no-repeat;
 }
 
+/* --- «Что предлагаем»: раскрывающийся блок в герое --- */
+
+.offer {
+  margin-top: 1.7rem;
+  max-width: 33rem;
+  background: rgba(255, 255, 255, 0.14);
+  border: 2px solid rgba(255, 255, 255, 0.32);
+  border-radius: var(--r-lg);
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+}
+
+.offer__toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.25rem;
+  font-size: 0.94rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  list-style: none;
+  transition: background var(--dur) var(--ease-out);
+}
+
+.offer__toggle::-webkit-details-marker {
+  display: none;
+}
+
+.offer__toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.offer__toggle:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: -3px;
+}
+
+.offer__chevron {
+  margin-left: auto;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f05a1e' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")
+    center / 0.9rem no-repeat;
+  transition: transform var(--dur) var(--ease-bounce);
+}
+
+.offer[open] .offer__chevron {
+  transform: rotate(180deg);
+}
+
+.offer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0 1.25rem 1.15rem;
+  display: grid;
+  gap: 0.65rem;
+  animation: reveal 0.3s var(--ease-out) both;
+}
+
+.offer__list li {
+  position: relative;
+  padding-left: 2.05rem;
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+
+.offer__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.12em;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f05a1e' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12.5l5.5 5.5L20 7'/%3E%3C/svg%3E")
+    center / 0.85rem no-repeat;
+}
+
 .hero__cta {
   margin-top: 2rem;
   display: flex;
@@ -977,6 +1061,122 @@ a:hover {
   font-size: 0.96rem;
 }
 
+/* ============================================================
+   Кого мы ищем
+   ============================================================ */
+
+.who__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.55fr) minmax(0, 0.78fr);
+  gap: clamp(1rem, 3vw, 2.25rem);
+  align-items: center;
+}
+
+.who__text .section__title {
+  margin-bottom: 1.25rem;
+}
+
+.who__list {
+  list-style: none;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.who__list li {
+  position: relative;
+  padding: 0.85rem 1.1rem 0.85rem 3rem;
+  background: var(--paper);
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-soft);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Лапка вместо маркера — фирменная деталь */
+.who__list li::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.35rem;
+  height: 1.35rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60' fill='%2314b941'%3E%3Cellipse cx='30' cy='40' rx='13' ry='15'/%3E%3Cellipse cx='11' cy='21' rx='7' ry='9'/%3E%3Cellipse cx='26' cy='13' rx='7' ry='9'/%3E%3Cellipse cx='43' cy='17' rx='7' ry='9'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+.who__subtitle {
+  font-size: var(--fs-h3);
+  margin-bottom: 0.9rem;
+}
+
+.who__tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.who__tags li {
+  padding: 0.6rem 1.1rem;
+  background: var(--green-soft);
+  border: 2px solid rgba(20, 185, 65, 0.35);
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #14522a;
+}
+
+/* --- Фотографии в фирменных масках --- */
+
+/* Фото вписывается в форму: кадр обрезается по краям, центр остаётся целым.
+   Скругление умеренное — узнаваемая фирменная форма из брендбука (стр. 14),
+   но лица по краям кадра не срезаются. Белая рамка — как на макетах брендбука. */
+.photo {
+  margin: 0;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border: 8px solid #fff;
+  background: var(--green-soft);
+  box-shadow: var(--sh-card);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo--cat {
+  border-radius: 34% 34% 20% 20% / 26% 26% 16% 16%;
+  transform: rotate(-2deg);
+}
+
+.photo--dog {
+  border-radius: 20% 20% 34% 34% / 16% 16% 26% 26%;
+  transform: rotate(2deg);
+}
+
+@media (max-width: 900px) {
+  .who__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .who__text {
+    grid-column: 1 / -1;
+    order: -1;
+  }
+
+  .photo {
+    aspect-ratio: 1 / 1;
+  }
+}
+
 /* Адреса магазинов */
 .stores {
   display: grid;
@@ -998,6 +1198,12 @@ a:hover {
 .store:hover {
   background: rgba(255, 255, 255, 0.18);
   transform: translateY(-4px);
+}
+
+/* Карточка магазина без подтверждённого адреса */
+.store--pending {
+  border-style: dashed;
+  opacity: 0.75;
 }
 
 .store__num {
@@ -1295,20 +1501,22 @@ a:hover {
   font-weight: 700;
 }
 
-/* Появление секций при скролле */
-.reveal {
+/* Появление секций при скролле.
+   Прячем только когда JS работает: иначе при ошибке скрипта или отключённом JS
+   контент остался бы невидимым навсегда. */
+.js .reveal {
   opacity: 0;
   transform: translateY(26px);
   transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
 }
 
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  .js .reveal {
     opacity: 1;
     transform: none;
     transition: none;
